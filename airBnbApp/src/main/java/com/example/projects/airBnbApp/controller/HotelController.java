@@ -18,13 +18,10 @@ public class HotelController {
 
     @PostMapping
     public ResponseEntity<HotelDto> createNewHotel(@RequestBody HotelDto hotelDto) {
-        if (log.isInfoEnabled()) {
-            log.info("Attempting to create a new hotel with name: "+hotelDto.getName());
-        }
+        log.info("Attempting to create a new hotel with name: "+hotelDto.getName());
         HotelDto hotel = hotelService.createNewHotel(hotelDto);
         return new ResponseEntity<>(hotel, HttpStatus.CREATED);
     }
-
 
     @GetMapping("/{hotelId}")
     public ResponseEntity<HotelDto> getHotelById(@PathVariable Long hotelId) {
@@ -44,7 +41,7 @@ public class HotelController {
         return ResponseEntity.noContent().build();
     }
 
-    @PatchMapping("/{hotelId}")
+    @PatchMapping("/{hotelId}/activate")
     public ResponseEntity<Void> activateHotel(@PathVariable Long hotelId) {
         hotelService.activateHotel(hotelId);
         return ResponseEntity.noContent().build();
