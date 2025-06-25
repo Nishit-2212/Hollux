@@ -1,5 +1,6 @@
 package com.example.projects.airBnbApp.dto;
 
+import com.example.projects.airBnbApp.entity.HotelContactInfo;
 import lombok.Data;
 
 @Data
