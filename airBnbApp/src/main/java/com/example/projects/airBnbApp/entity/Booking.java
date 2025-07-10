@@ -1,6 +1,9 @@
 package com.example.projects.airBnbApp.entity;
 
-
+import com.example.projects.airBnbApp.entity.Guest;
+import com.example.projects.airBnbApp.entity.Hotel;
+import com.example.projects.airBnbApp.entity.Room;
+import com.example.projects.airBnbApp.entity.User;
 import com.example.projects.airBnbApp.entity.enums.BookingStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -65,5 +68,8 @@ public class Booking {
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;
+
+    @Column(unique = true)
+    private String paymentSessionId;
 
 }
